@@ -2,32 +2,47 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+body{
+  background-color: #F5F5F5;
+}
+.main-color{
+  color: #DDB762;
+}
+.title-color{
+  color: #2C4768;
+}
+.secondary-color{
+  color: #B0B0B0;
+}
+.lawyer-booking{
+  position: relative;
+  &::after{
+    position: absolute;
+    content: '';
+    bottom: 0;
+    left: -15%;
+    width: 130%;
+    height: 2px;
+    background-color: #e2e2e2;
   }
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.lawyer-booking .active{
+  position: relative;
+  z-index: 10;
+  color: #2C4768;
+  border-bottom: 2px solid #577499;
 }
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+.lawyer-card:hover{
+  background: linear-gradient(to bottom right,#DDB762 20%,#98875F 95%);
+}
+.category-card:hover{
+  *{
+    color: white !important;
   }
+  background: linear-gradient(to bottom right,#DDB762 20%,#98875F 95%);
 }
